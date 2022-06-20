@@ -11,6 +11,8 @@ jobs:
       trigger: true
     - set_pipeline: self
       file: repo/pipeline.yml
+      var_files:
+      - repo/params.yml
 
   - name: hello
     plan:
