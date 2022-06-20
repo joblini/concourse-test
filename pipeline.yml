@@ -13,7 +13,7 @@ jobs:
       file: repo/pipeline.yml
       var_files:
 #     - repo/params.yml
-      - repo/${params_file}
+      - repo/((params_file))
 
   - name: hello
     plan:
