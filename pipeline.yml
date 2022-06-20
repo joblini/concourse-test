@@ -5,21 +5,9 @@ resources:
   source: {uri: https://github.com/joblini/concourse-test.git}
 
 jobs:
-  - name: configure-self
-    plan:
-    - get: repo
-      trigger: true
-    - set_pipeline: self
-      file: repo/pipeline.yml
-      var_files:
-#     - repo/params.yml
-      - repo/((params_file))
-
   - name: hello
     plan:
       - get: repo
-        trigger: true
-        passed: [configure-self]
       - task: echo-hello-world
         config:
           platform: linux
