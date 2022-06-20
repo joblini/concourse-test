@@ -2,7 +2,7 @@
 resources:
 - name: repo
   type: git
-  source: {uri: https://github.com/joblini/concourse-selfupdate-pipeline.git}
+  source: {uri: https://github.com/joblini/concourse-test.git}
 
 jobs:
   - name: configure-self
