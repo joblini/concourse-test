@@ -10,7 +10,15 @@ jobs:
     - get: repo
       trigger: true
     - set_pipeline: self
+      file: repo/pipeline-bar.yml
+
+  - name: set-pipeline
+    plan:
+    - get: repo
+      trigger: true
+      passed: [configure-self]
+    - set_pipeline: pipeline-bar
       file: repo/pipeline.yml
       var_files:
       - repo/params-bar.yml
-
+      
